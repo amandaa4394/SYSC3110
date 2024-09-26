@@ -1,3 +1,5 @@
+import SYSC3110.BuddyInfo;
+
 import java.util.ArrayList;
 
 public class AddressBook {
