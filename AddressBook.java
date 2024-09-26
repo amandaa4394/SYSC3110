@@ -23,11 +23,18 @@ public class AddressBook {
         return null;
     }
 
+    public void printBuddy(BuddyInfo aBuddy){
+        if(aBuddy != null){
+            System.out.println("Buddy does not exist");;
+        }else{
+            System.out.println("Buddys address: " + aBuddy.address);
+        }
+    }
+
     public static void main(String[] args){
         BuddyInfo buddy = new BuddyInfo("Tom", "Carleton", 613);
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
         addressBook.removeBuddy(0);
-
     }
 }
