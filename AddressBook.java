@@ -1,42 +1,27 @@
 package SYSC3110;
 
-import SYSC3110.BuddyInfo;
+import javax.swing.DefaultListModel; //Notify view when list is updated
 
 import java.util.ArrayList;
 
-public class AddressBook {
+public class AddressBook extends DefaultListModel<BuddyInfo>{
 
-    private ArrayList<BuddyInfo> myBuddies;
 
     public AddressBook(){
-        myBuddies = new ArrayList<>();
     }
-
     public void addBuddy(BuddyInfo aBuddy){
         if(aBuddy != null){
-            myBuddies.add(aBuddy);
+            this.addElement(aBuddy);
         }
     }
 
     public BuddyInfo removeBuddy(int index){
-        if(index >= 0 && index < myBuddies.size()){
-            return myBuddies.remove(index);
+        if(index >= 0 && index < this.size()){
+            return this.remove(index);
         }
         return null;
     }
 
-    public void printBuddy(BuddyInfo aBuddy){
-        if(aBuddy != null){
-            System.out.println("Buddy does not exist");;
-        }else{
-            System.out.println("Buddys address: " + aBuddy.address);
-        }
-    }
 
-    public static void main(String[] args){
-        BuddyInfo buddy = new BuddyInfo("Tom", "Carleton", 613);
-        AddressBook addressBook = new AddressBook();
-        addressBook.addBuddy(buddy);
-        addressBook.removeBuddy(0);
-    }
+
 }
