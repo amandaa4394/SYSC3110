@@ -1,22 +1,24 @@
 package SYSC3110;
+
+
 public class BuddyInfo {
+    private String name;
+    private String address;
+    private int phoneNumber;
 
     public BuddyInfo(String name, String address, int phoneNumber){
         this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getName() {
         return name;
     }
 
-    private String name;
-    String address;
-    int phoneNumber;
-
-    public static void main(String[] args) {
-        System.out.println("Hello world");
-
-        BuddyInfo buddyInfo = new BuddyInfo("Daphne", "June 8", 613);
-
+    @Override
+    public String toString() {
+        return name + " - " + address + " - " + phoneNumber;
     }
+
 }
